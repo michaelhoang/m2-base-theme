@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="Magento\Framework\View\Element\Template" name="head.svg" template="Magento_Theme::html/svg.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="content.bottom">
+            <block class="Magento\Framework\View\Element\Template" name="demo.xxx" template="Magento_Theme::js/components.phtml" before="-"/>
+        </referenceContainer>
+    </body>
+</page>
