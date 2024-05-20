@@ -8,6 +8,8 @@ define([], function () {
                 this.offcanvasBtnEl = offcanvasBtnEl;
                 this.offcanvasEl = document.querySelector(offcanvasBtnEl.getAttribute('data-bs-target'));
                 this.closeOffCanvasEl = this.offcanvasEl.querySelector('[data-bs-dismiss="offcanvas"]');
+                this.bodyEl = document.querySelector('body');
+                console.log(this.bodyEl)
 
                 this.bindEvents();
                 console.log('Check it out')
@@ -16,6 +18,7 @@ define([], function () {
             toggleOffcanvas() {
                 if (this.offcanvasEl.classList.contains('show')) {
                     this.offcanvasEl.classList.remove('show');
+                    this.bodyEl.classList.remove('scroll-locked');
                     document.querySelector('.offcanvas-backdrop').remove();
                 } else {
                     this.offcanvasEl.classList.add('show');
@@ -24,7 +27,8 @@ define([], function () {
                     this.offcanvasEl.after(backdropDiv);
                     backdropDiv.addEventListener('click', () => {
                         this.toggleOffcanvas();
-                    })
+                    });
+                    this.bodyEl.classList.add('scroll-locked');
                 }
             }
 
